@@ -2,6 +2,7 @@ use serde::{Deserialize, Serialize};
 
 /// Server's confirmation of a negotiated encryption scheme.
 #[derive(Clone, Debug, Deserialize, Eq, Hash, PartialEq, Serialize)]
+#[serde(untagged)]
 pub enum SessionDescription {
     UDP {
         /// The negotiated encryption mode.
