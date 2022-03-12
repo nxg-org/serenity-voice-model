@@ -26,7 +26,7 @@ fn deserialize_identify_json() {
     let ident = Identify {
         session_id: "my_session_id".into(),
         token: "my_token".into(),
-        server_id: GuildId(41771983423143937),
+        server_id: Some(GuildId(41771983423143937)),
         user_id: UserId(104694319306248192),
         streams: vec![],
         video: false,
@@ -269,7 +269,7 @@ fn deserialize_client_disconnect_json() {
 #[test]
 fn serialize_identify() {
     let value: Event = Identify {
-        server_id: GuildId(1),
+        server_id: Some(GuildId(1)),
         session_id: "56f88a86dce65c65b9".into(),
         token: "56f88a86dce65c65b8".into(),
         user_id: UserId(2),

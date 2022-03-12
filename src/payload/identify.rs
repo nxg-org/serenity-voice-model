@@ -5,7 +5,7 @@ use serde::{Deserialize, Serialize};
 #[derive(Clone, Debug, Deserialize, Eq, Hash, PartialEq, Serialize)]
 pub struct Identify {
     /// GuildId which the target voice channel belongs to.
-    pub server_id: GuildId,
+    pub server_id: Option<GuildId>,
     /// Authentication session received from Discord's main gateway as part of a
     /// `"VOICE_STATE_UPDATE"` message.
     pub session_id: String,
